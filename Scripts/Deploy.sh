@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPO="/home/ubuntu/NOMBRE_REPOSITORIO"
+REPO="/home/ubuntu/Practica-Despliegue"
 WEBAPPS="/var/lib/tomcat10/webapps"
 LIB="/usr/share/tomcat10/lib/servlet-api.jar"
 
