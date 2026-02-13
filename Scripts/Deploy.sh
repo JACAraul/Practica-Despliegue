@@ -30,4 +30,3 @@ sudo systemctl restart tomcat10
 rm -rf build
 
 curl -I http://localhost:8080/hola/HolaServlet
-# dadsdadsa ads
