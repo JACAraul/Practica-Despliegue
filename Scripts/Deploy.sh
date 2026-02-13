@@ -22,3 +22,4 @@ sudo cp hola.war $WEBAPPS/
 sudo systemctl restart tomcat10
 
 curl -I http://localhost:8080/hola/HolaServlet
+# dadsdadsa ads
