@@ -1,4 +1,4 @@
-package hola;
+package src.Hola;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;  
