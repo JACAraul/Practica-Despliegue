@@ -4,24 +4,22 @@ REPO="/home/ubuntu/Practica-Despliegue"
 LIB="/usr/share/tomcat10/lib/servlet-api.jar"
 WEBAPPS="/var/lib/tomcat10/webapps"
 
-echo "Situandose en la carpteta del proyecto..."
+echo ">>> [1] Situándose en la carpeta del proyecto..."
 cd $REPO
+git pull 
 
-echo "Actualizando el contenido del repositorio"
-git pull
-
-echo "Preparando Compilacion"
+echo ">>> [2] Preparando compilación..."
 rm -rf build
-echo "creando el archivo de alojamiento del proyecto"
 mkdir -p build/WEB-INF/classes
 
-echo "Buscando archivo java"
+echo ">>> [3] Buscando archivo Java..."
 ARCHIVO_JAVA=$(find . -name "HolaServlet.java")
+echo "☑ Archivo a compilar: $ARCHIVO_JAVA"
 
-echo "Compilando"
+echo ">>> [4] Compilando..."
 javac -cp $LIB -d build/WEB-INF/classes "$ARCHIVO_JAVA"
 
-echo "Empaquetando y deplegando"
+echo ">>> [5] Empaquetando y Desplegando..."
 cd build
 jar -cvf ../hola.war *
 cd ..
@@ -29,4 +27,5 @@ sudo cp hola.war $WEBAPPS/
 sudo systemctl restart tomcat10
 rm -rf build
 
+echo ">>> [6] Verificando..."
 curl -I http://localhost:8080/hola/HolaServlet
